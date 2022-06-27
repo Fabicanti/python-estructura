@@ -1,0 +1,63 @@
+Clase Dynamic Arrangement (arreglo dinamico)
+Un arreglo dinamico representa una estructura lineal de datos
+en la que se puede agregar, quitar y obtener elementos por indice.
+Es una estructura homogenea y se puede recorrer a travez de 
+un iterador.
+*******************************************************************
+
+Molde de Especificacion:
+
+TAD Nombre_del_TAD:
+ArregloDinamico<a>
+
+Igualdad Observacional:
+Si a y b son dos arreglos dinamicos
+a es igual a b si cumple que:
+	El tamaño de a y b son iguales 
+	Cada elemento en a es igual a correspondiente a cada 
+	elemento en b.
+
+Usa:
+Bool, Natural, a, secuencia<a>
+
+Parametro Formal:
+<a>
+
+Género:
+ArregloDinamico<a> A
+
+Observadores Básicos:
+es_vacio(ArregloDinamico<a> A) -> Bool
+tamaño(ArregloDinamico<a> A) -> Natural {pre: el arreglo tiene al menos un elemento}
+buscar( ArregloDinamico<a> A, a) -> Natural {pre: el arreglo tiene al menos un elemento}
+
+Generadores:
+nuevo_arreglo() -> None 
+nuevo_arreglo(secuencia<a> A) -> None
+copiar(ArregloDinamico<a> A) ->  ArregloDinamico<a> B 
+
+Otras Operaciones:
+agregar(ArregloDinamico<a> A, a) -> None  
+quitar(ArregloDinamico<a> A, a) -> None {pre: el arreglo tiene al menos un elemento}
+elimiar(ArregloDinamico<a> A) -> None  
+accederIndice (ArregloDinamico<a> A, Indice) -> a {pre: el arreglo tiene al menos un elemento}
+
+Axiomas:
+es_vacio(ArregloDinamico<a> A) {retorna 'True -si el arreglo esta vacio o False -si el arreglo tiene al menos un elemento'}
+tamaño(ArregloDinamico<a> A) {'devuelve un entero con la cantidad de elementos en el arreglo A'}
+buscar(ArregloDinamico<a> A, a) {'Devuelve el indice del elemento a en el arreglo A'}
+nuevo_arreglo() {'Crea un arreglo vacio'}
+nuevo_arreglo(secuencia<a> A) {'crea un arreglo A a partir de una secuencia'}
+copiar(ArregloDinamico<a> A) { retorna un nuevo ArregloDinamico<a> B que es una copia del ArregloDinamico<a> A}
+agregar(ArregloDinamico<a> A, a) {'agrega el elemento a al arreglo A'} 
+quitar(ArregloDinamico<a> A, a) {'elimina ul elemento a del arreglo A'}
+elimiar(ArregloDinamico<a> A) {'elimina el arreglo A por completo'} 
+accederIndice (ArregloDinamico<a> A, i) {'accedemos a un elemento que se encuentra en el indice del arreglo A'}
+
+Exporta:
+ArregloDinamico<a> ; es_vacia ; tamaño ; buscar ; nuevo_arreglo ; nuevo_arreglo()
+copiar ; agregar ; quitar ; elimiar ; accederIndice.
+
+
+
+	

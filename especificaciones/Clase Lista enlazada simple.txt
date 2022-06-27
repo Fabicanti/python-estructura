@@ -1,0 +1,73 @@
+Clase lista enlazada simple:
+Una lista enlazada simple representa una estructura lineal de datos 
+en la que se pueden agregar o quitar elementos en cualquier parte de 
+la misma.
+Se puede definir como una lista enlazada de nodos, 
+donde cada nodo tiene un único campo de enlace. 
+Una variable de referencia contiene una referencia al primer nodo, 
+cada nodo (excepto el último) enlaza con el nodo siguiente, 
+y el enlace del último nodo contiene NULL para indicar el final de la lista.
+
+*****************************************************************************
+
+
+Molde de Especificacion:
+
+TAD Nombre_del_TAD
+lista_simple<a>
+
+Igualdad Observacional:
+Si a y b son dos pilas
+a es igual a b si se cumple que:
+	Las longitudes de a y b son iguales
+	Y
+	cada elemento en a es igual al correspondiente
+	elemento en b.
+
+Usa
+
+Parámetro Formal
+<a>
+
+Géneros
+lista_simple<a> L
+
+observadores básicos
+es_vacia(lista_simple<a> L) → Bool 
+tamaño(lista_simple<a> L) → Natural 
+mostrar(lista_simple<a> L[i]) → a {pre: la lista tiene al menos un elemento}
+
+Generadores
+nueva_lista() → None 
+nueva_lista(secuencia<a> L) → a 
+
+otras operaciones
+agregarFrente(lista_simple<a> L, a) → None 
+agregarFinal(lista_simple<a> L, a) → None
+agregarIndice(lista_simple<a> L, a , i) → None
+quitar(lista_simple<a> L ,a) → a {pre: la lista tiene al menos un elemento}
+elimiar(lista_simple<a> L) → None {pre: la lista tiene al menos un elemento}
+accederIndice(lista_simple<a> L ,i) → a {pre: la lista tiene al menos un elemento}
+cortar(lista_simple<a> L , i ) → lista_simple<a> B / Bool {pre: la lista tiene al menos un elemento}
+														  {post: si el indice especificado no se encuentra retorna false}
+														  {post: en la lista original se mantendan los elementos que no fueron cortados}
+
+Axiomas
+es_vacia(lista_simple<a> L) {'retorna true -si la lista L esta vacia, false -si la lista L contiene elementos'}
+tamaño(lista_simple<a> L ) {'devuelve un entero con la cantidad de elemetos que tiene la lista L'}
+mostrar(lista_simple<a> L[i]) {'muestra el elemento del indice [i] en la lista L'}
+nueva_lista() {'crea una lista vacia'}
+nueva_lista(secuencia<a> L) {'crea la lista L a partir de una secuencia'}
+agregarFrente(lista_simple<a> L, a ) {'agrega el elemento a al principio de la lista L'}
+agregarFinal(lista_simple<a> L, a ) { agrega el elemento a en el final de la lista L }
+agregarIndice(lista_simple<a> L , a ,i) { agrega el elemento a en la posicion i de la lista L} 
+quitar(lista_simple<a> L, a) {quita el elemento a si se encuentra en la lista L} 
+elimiar(lista_simple<a> L) { borra toda la lista L}
+accederIndice(lista_simple<a> L,i) {obtenemos el elemento que esta en la posicion i de la lista L}
+cortar(lista_simple<a> L, i ) {retorna una nueva lista con los elementos siguiente al indice especificado,
+y ademas, en la lista original borra los elementos siguiente del indice especificado. Sí el indice no es valido,
+producira un Error}
+
+Exporta
+lista_simple<a>; es_vacia ; tamaño ; mostrar; nueva_lista ; nueva_lista() ; agregarFrente ;
+agregarFinal ; accederIndice ; quitar ; eliminar ; accederIndice ; cortar

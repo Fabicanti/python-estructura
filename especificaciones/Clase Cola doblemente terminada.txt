@@ -1,0 +1,54 @@
+clase cola doblemente terminada 
+
+
+***************************************************************
+
+Molde de Especificacion:
+
+TAD Nombre_del_TAD:
+ColaDoble<a>
+
+Igualdad Observacional:
+Sean A y B dos colas dobles, son iguales si: la longitud de A y B son
+iguales, y cada elemento de A es igual al correspondiente de B.
+
+Usa:
+Natural ; Bool ; None ; <a> ; secuencia<a> 
+
+Parametro Formal:
+<a>
+
+Género:
+ColaDoble<a> C
+
+Observadores Básicos:
+Tamaño(ColaDoble<a> C) -> Natural
+Es_vacia(ColaDoble<a> C) -> Bool
+Primero(ColaDoble<a> C) -> a {pre: La cola doble tiene al menos un elemento}
+Ultimo(ColaDoble<a> C) -> a {pre: La cola doble tiene al menos un elemento}
+
+Generadores:
+Vacía() -> ColaDoble<a> C {post: La cola doble retornada esta vacia}
+A_partir_de(Secuencia<a>) -> ColaDoble<a> C {post: La cola doble retornada contiene 
+                                            los elementos de la secuencia con el mismo
+                                            orden que tiene la secuencia}
+
+Otras opecaiones:
+Agregar_frente(ColaDoble<a> C, a) -> None
+Agregar_Final(ColaDoble<a> C, a) ->None {pre: la cola doble contiene al menos un elemento}
+Borrar(ColaDoble<a> C) -> None {pre: la cola doble contiene al menos un elemento}
+
+Axiomas:
+Tamaño(ColaDoble<a> C) {retorna la cantidad de elementos que tiene la cola doble D} 
+Es_vacia(ColaDoble<a> C) {retorna -true si la cola doble D esta vacia o -false si la cola doble D contiene elementos}
+Primero(ColaDoble<a> C) {retorna el primer elemento de la cola doble D}
+Ultimo(ColaDoble<a> C) {retorna el ultimo elemento de la cola doble D}
+Vacía() {crea una cola doblemente termianda vacia}
+A_partir_de(Secuencia<a> C) {crea una cola doble D a partir de la secuencia pasada por parametro} 
+Agregar_frente(ColaDoble<a> C, a elemen) {agrega el elemento elemen al principio de la cola doble D}
+Agregar_Final(ColaDoble<a> C, a elemen) {agrega el elemento elemen al final de la cola doble D}
+Borrar(ColaDoble<a> C) {elimina por completo la cola doble D}
+
+Exporta:
+ColaDoble<a> , tamaño , Es_vacia , Primero , Ultimo , Vacía , A_partir_de , Agregar_frente
+Agregar_Final , Borrar

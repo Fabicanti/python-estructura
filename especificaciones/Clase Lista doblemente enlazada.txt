@@ -1,0 +1,63 @@
+clase lista doblemente enlazada 
+Una lista doblemente enlazada es una estructura de datos que 
+consiste en un conjunto de nodos enlazados secuencialmente.
+Cada nodo contiene tres campos, dos para los llamados enlaces,
+que son referencias al nodo siguiente y al anterior en la secuencia
+de nodos, y el nodo restante para almacenar el dato. 
+# El enlace al nodo anterior del primer nodo y el enlace al nodo siguiente del último nodo,
+apuntan a un tipo de nodo que marca el final de la lista, normalmente un nodo centinela o puntero null,
+para facilitar el recorrido de la lista. Si existe un único nodo centinela,
+entonces la lista es circular a través del nodo centinela. 
+
+***************************************************************
+
+Molde de Especificacion:
+
+TAD Nombre_del_TAD:
+ListaDoble<a>
+
+Igualdad Observacional:
+Sean A y B dos listas dobles, son iguales si: la longitud de A y B son
+iguales, y cada elemento de A es igual al correspondiente de B.
+
+Usa:
+Natural ; Bool ; None ; <a> ; secuencia<a>
+
+Parametro Formal:
+<a>
+
+Género:
+ListaDoble<a> D
+
+Observadores Básicos:
+Tamaño(ListaDoble<a> D) -> Natural
+Es_vacia(ListaDoble<a> D) -> Bool
+Primero(ListaDoble<a> D) -> a {pre: La lista doble tiene al menos un elemento}
+Ultimo(ListaDoble<a> D) -> a {pre: La lista doble tiene al menos un elemento}
+
+Generadores:
+Vacía() -> ListaDoble<a> D {post: La lista doble retornada esta vacia}
+A_partir_de(Secuencia<a>) -> ListaDoble<a> D {post: La lista doble retornada contiene 
+                                            los elementos de la secuencia con el mismo
+                                            orden que tiene la secuencia}
+
+Otras opecaiones:
+Agregar_frente(ListaDoble<a> D, a) -> None
+Agregar_Final(ListaDoble<a> D, a) ->None {pre: la lista doble contiene al menos un elemento}
+Insertar(ListaDoble<a> D, coordenada, a) -> None {pre: la coordenada es valida}
+Borrar(ListaDoble<a> D, coordenada) -> Coordenada {pre: la lista doble contiene al menos un elemento}
+
+Axiomas:
+Tamaño(ListaDoble<a> D) {retorna la cantidad de elementos que tiene la lista doble D} 
+Es_vacia(ListaDoble<a> D) {retorna -true si la lista doble D esta vacia o -false si la lista doble D contiene elementos}
+Primero(ListaDoble<a> D) {retorna el primer elemento de la lista doble D}
+Ultimo(ListaDoble<a> D) {retorna el ultimo elemento de la lista doble D}
+Vacía() {crea una lista doblemente enlazada vacia}
+A_partir_de(Secuencia<a> D) {crea una lista doble D a partir de la secuencia pasada por parametro} 
+Agregar_frente(ListaDoble<a> D, a elemen) {agrega el elemento elemen al principio de la lista doble D}
+Agregar_Final(ListaDoble<a> D, a elemen) {agrega el elemento elemen al final de la lista doble D}
+Borrar(ListaDoble<a> D) {elimina por completo la lista doble D}
+
+Exporta:
+ListaDoble<a> , tamaño , Es_vacia , Primero , Ultimo , Vacía , A_partir_de , Agregar_frente
+Agregar_Final , Borrar

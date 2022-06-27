@@ -1,0 +1,64 @@
+clase fecha
+***************************************************************
+
+Molde de Especificacion:
+
+TAD Nombre_del_TAD:
+Fecha<a>
+
+Igualdad Observacional:
+Si a y b son dos fechas
+a es igual a b si se cumple que:
+	contienen el mismo dia, mes, año
+    con el mismo formato DDMMAAAA
+
+Usa:
+Natural, Bool, <a>
+
+Parametro Formal:
+<a>
+
+Género:
+Fecha<a> 
+
+Observadores Básicos:
+fechaActual() -> Fecha<a> F
+getDia(Fecha<a> F) -> Natural
+getMes(Fecha<a> F) -> Natural
+getAño(Fecha<a> F) -> Natural
+es_bisiesto(getAño()) -> Bool 
+
+Generadores:
+nueva_fecha() -> None
+nueva_fecha(Fecha<a> F) -> None
+
+Otras opecaiones:
+setFecha(Fecha<a> F) -> None
+setDia(Fecha<a> F, DD) -> None
+setMes(Fecha<a> F, MM) -> None
+setaño(Fecha<a> F, AAAA) -> None
+eliminar(Fecha<a> F) -> None
+validarFecha(Fecha<a> F) -> Bool
+actualizarFecha(Fecha<a> F) -> None
+
+Axiomas:
+fechaActual(Fecha<a> F) {retorna la fecha actual F en formato DDMMAAAA}
+getDia(Fecha<a> F) {retorna el dia actual de la fecha F en formato DD}
+getMes(Fecha<a> F) {retorna el mes actual de la fecha F en formato MM}
+getAño(Fecha<a> F) {retorna el año actual de la fecha F en formato AAAA}
+es_bisiesto(getAño()) {retorna -true si el año de la fecha pasada por parametro es bisiesto sino retorna false}
+nueva_fecha() {crea una nueva fecha sin datos}
+nueva_fecha(Fecha<a> F) {crea una nueva fecha F con los datos DDMMAAAA pasados por parametro}
+setFecha(Fecha<a> F) {setea la fecha actual con los datos de F}
+setDia(Fecha<a> F, DD) {setea los dias DD a la fecha F}
+setMes(Fecha<a> F, MM) {setea el mes MM a la fecha F}
+setaño(Fecha<a> F, AAAA) {setea el año AAAA a la fecha F}
+eliminar(Fecha<a> F) {elimina la fecha F,dejandola vacia}
+validarFecha(Fecha<a> F) {comprueba que la fecha F pasada por parametros sea valida}
+actualizarFecha(Fecha<a> F) {actualiza la fecha guardada por la pasada por parametro}
+
+
+Exporta:
+Fecha<a>, fechaActual, getDia, getMes, getAño, es_bisiesto
+nueva_fecha, nueva_fecha, setDia, setMes, setaño, eliminar
+

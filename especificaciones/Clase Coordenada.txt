@@ -1,0 +1,50 @@
+clase Coordenada
+una Coordenada es un objeto que
+permite hacer referencia a cada uno de los elementos
+almacenados dentro un contenedor o, en forma especial,
+indicar que no está haciendo referencia a ninguno de ellos.
+
+***************************************************************
+
+Molde de Especificacion:
+
+TAD Nombre_del_TAD:
+Coordenada <b<a>>
+
+Igualdad Observacional:
+Si a y b son dos coordenadas
+a es igual a b si se cumple que: hacen referencia a la misma
+posición dentro del mismo contenedor
+
+Usa:
+
+
+Parámetro Formal:
+<b, a>
+
+Géneros:
+Coordenada <b<a>>
+
+Observadores Básicos:
+valor(Coordenada<b<a>>) → a {Pre: La coordenada es válida}
+
+Generadores:
+a_partir_de(Coordenada <b<a>>) → Coordenada <b<a>>
+
+Otras Operaciones:
+avanzar(Coordenada<b<a>>) → Coordenada<b<a>>
+siguiente(Coordenada<b<a>>) → Coordenada<b<a>>
+retroceder(Coordenada<b<a>>) → Coordenada<b<a>>
+previo(Coordenada<b<a>>) → Coordenada<b<a>>
+
+Axiomas:
+a_partir_de(Coordenada <b<a>> c): crea una coordenada a partir de la coordenada c
+valor(Coordenada<b<a>> c): retorna el valor al que hace referencia la coordenada c
+siguiente(Coordenada<b<a>> c): retorna una nueva coordenada que hace referencia a la posición siguiente de c.
+previo(Coordenada<b<a>> c): retorna una nueva coordenada que hace referencia a la posición anterior de c.
+avanzar(Coordenada<b<a>> c) avanza a la siguiente a c
+retroceder(Coordenada<b<a>> c) retrocede a la anterior a c
+
+Exporta:
+Coordenada<b<a>>,a_partir_de, siguiente, previo,
+valor, avanzar, retroceder

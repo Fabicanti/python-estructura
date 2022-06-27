@@ -1,0 +1,80 @@
+Clase Arbol binario de busqueda:
+Un arbol binario es a lo sumo de grado 2(cada nodo tiene solo dos hijos)
+Se dice que el arbol esta ordenado cuando cada nodo del arbol es mayor que los elementos
+de su subarbol izquierdo y menor o igual que si subarbol derecho.
+
+***************************************************************
+
+Molde de Especificacion:
+
+TAD Nombre TAD:
+BinarySerchTree<a,b>
+
+Igualdad Observacional:
+si c y d son dos arboles binario de busqueda
+c es igual a d si se cumple que:
+c contiene los mismos elementos que d
+
+Usa:
+Natural, Bool, Secuencia<Tupla <a,b>>, Tupla <a,b>, None
+Coordenada<BinarySerchTree<a,b>>
+
+Parámetro Formal:
+a, b
+
+Géneros:
+BinarySerchTree<a,b>
+
+observadores básicos:
+cantidad_de_nodos(BinarySerchTree<a, b>) → Natural
+es_vacío(BinarySerchTree<a, b>) → Bool
+máximo(BinarySerchTree<a, b>) → Coordenada<BinarySerchTree<a,b>> {Pre: el árbol tiene al menos un elemento}
+mínimo(BinarySerchTree<a, b>) → Coordenada<BinarySerchTree<a,b>> {Pre: el árbol tiene al menos un elemento}
+buscar_clave(BinarySerchTree<a, b>, a) → Coordenada<BinarySerchTree<a,b>>
+
+Generadores:
+vacío() → BinarySerchTree<a, b> {Post: El Árbol retornado esta vacío}
+a_partir_de(Secuencia<Tupla<a, b>>) → BinarySerchTree<a,b> {Post: El árbol contiene los elementos de la secuencia recibida}
+
+otras operaciones:
+insertar(BinarySerchTree<a, b>, a, b) →Coordenada<BinarySerchTree<a, b>> {Pos: El árbol no esta vacío}
+borrar(BinarySerchTree<a, b>, a) → Bool, Coordenada<BinarySerchTree<a, b>>
+inicio(BinarySerchTree<a, b>) → coordenada<BinarySerchTree<a, b>>
+fin(BinarySerchTree<a, b>) → coordenada<BinarySerchTree<a, b>>
+
+Axiomas:
+vacío(): Crea un árbol vacío (sin elementos)
+
+a_partir_de(Secuencia<Tupla<a,b> s): crea un árbol que contiene las claves de tipo a
+asociadas a los valores de tipo b dados en la secuencia s
+
+insertar(ArbolBinarioDeBusqueda<a, b> t, a clave b valor): agrega la clave en el árbol t con
+valor asociado
+
+borrar(ArbolBinarioDeBusqueda<a, b> t, a clave):borra del árbol t la clave y su valor asociado.
+
+tamaño(ArbolBinarioDeBusqueda<a, b> t): Retorna/devuelve la cantidad de elementos del árbol t
+
+es_vacío(ArbolBinarioDeBusqueda<a, b> t): Retorna/devuelve verdadero si el árbol t esta
+vacío y falso en caso contrario
+
+máximo(ArbolBinarioDeBusqueda<a, b> t): retorna/devuelve una coordenada que hace
+referencia al mayor elemento del árbol t.
+
+mínimo(ArbolBinarioDeBusqueda<a, b> t): retorna/devuelve una coordenada que hace
+referencia al menor elemento del árbol t.
+
+buscar_clave(ArbolBinarioDeBusqueda<a, b> t, a clave): si clave pertenece al árbol t retorna
+una coordenada que hace referencia al elem con dicha clave. En caso contrario retorna una
+coordenada que hace referencia al siguiente del último elemento del árbol
+
+inicio(ArbolBinarioDeBusqueda<a, b> t): devuelve una coordenada que hace referencia al primer elemento del
+árbol t
+
+fin(ArbolBinarioDeBusqueda<a, b> t):devuelve una coordenada que hace referencia al siguiente del
+último elemento del árbol t
+
+Exporta:
+BinarySerchTree<a, b>, vacío, a_partir_de,
+insertar, borrar, tamaño, es_vacío, mínimo, máximo,
+buscar_clave, inicio, fin

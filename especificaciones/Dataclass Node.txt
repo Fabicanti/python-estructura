@@ -1,0 +1,9 @@
+from dataclasses import dataclass
+form typing import any
+
+	@dataclass
+	class _Node:
+		value : any
+		prev : '_Node'
+	
+	__slots__ = ['_top']

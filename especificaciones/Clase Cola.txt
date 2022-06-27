@@ -1,0 +1,59 @@
+Clase Tail (cola)
+Una cola es un grupo ordenado (con respecto al tiempo que
+llevan en él) de elementos homogéneos (todos del mismo
+Tipo). Los elementos se añaden por un extremo (final) y se
+sacan por el otro extremo (frente).
+Estructura FIFO (First Input First Output).
+
+************************************************************
+
+Especificacion en molde:
+
+TAD nombre_del_TAD
+Cola<a>
+
+igualdad observacional
+Si a y b son dos colas 
+a es igual a b si se cumple que:
+	las longitudes de a y b son iguales
+	Y
+	cada elemento de a es igual al correspondiente 
+	en b
+
+Usa
+Natural ; Bool ; String ; None ; <a> ; secuencia<a>
+
+Parámetro Formal
+<a>
+
+Géneros
+Cola<a> C
+
+observadores básicos
+tamaño(Cola<a> C) → Natural 
+es_vacia(Cola<a> C) → Bool  
+pri_elem(Cola<a> C) → a {pre: la cola tiene al menos un elemento}
+ult_elem(Cola<a> C)→ a {pre: la cola tiene al menos un elemento}
+
+Generadores
+nueva_cola() → Cola<a> P {post: crea una cola vacia}    
+cola(secuencia<a> C) → Cola<a> P {post: crea una cola con los elementos de la secuencia}
+
+otras operaciones
+encolar(Cola<a> C, a) → None {post: se agrega el elemento a al final de la cola} 
+desencolar(Cola<a> C) → a {pre: la cola tiene al menos un elemento}
+vaciar(Cola<a>) → None {post: la cola esta vacia}
+
+Axiomas
+tamaño(Cola<a> C) {'devuelve un entero con la cantidad de elementos en la cola'}
+es_vacia(Cola<a> C) {retorna 'true -si la cola esta vacia, false -si la cola no esta vacia'}
+pri_elem(Cola<a> C) {'devuelve el primer elemento que entro en la cola'}
+ult_elem(Cola<a> C) {'devuelve el ultimo elemento que entro en la cola'}
+nueva_cola()  {'crea una cola vacia')  
+cola(secuencia<a> C)  {'crea una cola apartir de los elementos de la secuencia'}
+insertar(Cola<a> C, a)  {'agrega el elemento 'a' al final de la cola C '}
+sacar(Cola<a>)  {'obtenemos el ultimo elemento de la cola'}
+
+Exporta
+Cola<a> ; tamaño ; es_vacia ; prim_elem ; ult_elem ; nueva_cola ; cola ; 
+insertar ; sacar 

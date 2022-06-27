@@ -1,0 +1,60 @@
+Clase Set (conjunto)
+Un conjuto representa una estructura de datos lineal que puede almacenar cualqueir tipo de datos.
+Se puede agregar o quitar elementos lo que lo hace una estructura dinamica pero no es posible
+acceder a estos elementos a traves de un indice, porque los elementos no mantienen 
+una posicion fija. No permite la repeticion de elementos.
+*************************************************************************************************
+
+Molde de Especificacion:
+
+TAD Nombre_del_TAD:
+Conjunto<a>
+
+Igualdad Observacional:
+Si a y b son dos conjuntos
+a es igual a b si cumple que:
+	El tamaño de a y b son iguales
+	Contienen los mismos elementos
+
+Usa:
+Bool, Natural, a, secuencia<a>, Conjunto
+
+Parametro Formal:
+<a>
+
+Género:
+Conjunto<a> S
+
+Observadores Básicos:
+es_vacio(Conjuntos<a> S) -> Bool 
+tamaño(Conjuntos<a> S) -> Natural
+encontrar(Conjuntos<a> S, a) -> Bool 
+
+Generadores:
+nuevo_conjunto() -> None {post: 'Crea un conjunto vacio'}
+nuevo_conjunto(secuencia<a> S, a) -> a { post: 'Crea un conjunto a partir de una secuencia'}
+
+Otras opecaiones:
+agregar(Conjunto<a> S, a) -> None 
+quitar(Conjunto<a> S, a) -> None {pre: el conjunto tiene al menos un elemento}
+vaciar(Conjunto<a> S) -> None {post: 'elimina todos los elementos del conjunto'}
+union(Conjunto<a> S, Conjunto<a> R) -> Conjunto<a> 
+interseccion(Conjunto<a> S, Conjunto<a> R) -> Conjunto<c>
+diferencia(Conjunto<a> S, Conjunto<a> R) -> Conjunto<c> 
+
+Axiomas:
+es_vacio(Conjuntos<a> S) {retorna un 'True -si el conjunto esta vacio o False -si el conjunto no esta vacio'}
+tamaño(Conjuntos<a> S) {'devuelve un entero con el numero de elementos que contiene'}
+encontrar(Conjuntos<a> S, a) {retorna 'True -si el elemento a pertenece al conjunto S Flase -si no pertenece'}
+nuevo_conjunto() {'Crea un conjunto vacio'}
+nuevo_conjunto(secuencia<a> S) {'Crea un conjunto S a partir de una secuencia de elementos a'}
+agregar(Conjunto<a> S, a) {'agrega el elemento 'a' al conjunto S'}
+quitar(Conjunto<a> S, a) {'quita el elemento 'a' del conjunto S'}
+vaciar(Conjunto<a> S) {'elimina todos los elementos del conjunto S'}
+union(Conjunto<a> S, Conjunto<a> R) {'une a los conjuntos a y b dentro del conjunto a, eliminando los elementos que tengan en comun'}
+interseccion(Conjunto<a> S, Conjunto<a> R) {'retorna un nuevo conjunto con los elementos que se encuentran en ambos conjuntos'}
+diferencia(Conjunto<a> S, Conjunto<a> R) {'retorna un nuevo conjunto que contiene los elementos del conjunto S que no están en el conjunto R'}
+
+Exporta:
+Conjunto<a> ; es_vacio ; tamaño ; encontrar ; nuevo_conjunto ; nuevo_conjunto() ; 
+agregar ; quitar ; vaciar ; union ; interseccion ; diferencia.

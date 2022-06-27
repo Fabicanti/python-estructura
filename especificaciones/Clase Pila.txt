@@ -1,0 +1,61 @@
+Clase Stack (pila)
+Una pila representa una estructura lineal de datos en la que se
+puede agregar o quitar elementos únicamente por uno de los dos
+extremos, los elementos de una pila se eliminan en orden
+inverso al que se insertaron.
+Suele denominarse lifo (last in, first out); es decir, el
+último en llegar es el primero en salir.
+Una pila es una estructura de datos lineal, como un arreglo; y se
+define formalmente como una colección de datos a los cuales se
+puede acceder mediante un extremo, que se conoce generalmente
+como tope.
+
+*******************************************************************
+
+Molde de Especificacion:
+
+TAD Nombre_del_TAD
+Pila<a>
+
+Igualdad Observacional:
+Si a y b son dos pilas
+a es igual a b si se cumple que:
+	Las longitudes de a y b son iguales
+	Y
+	cada elemento en a es igual al correspondiente
+	elemento en b.
+
+Usa
+Natural ; Bool ; None ; <a> ; secuencia<a>
+
+Parámetro Formal
+<a>
+
+Géneros
+Pila<a> 
+
+observadores básicos
+tamaño(Pila<a> P) → Natural 
+es_vacia(Pila<a> P) → Bool
+tope(Pila<a> P)→ a {pre: la pila tiene al menos un elemento}
+
+Generadores
+nueva_pila()→ None  
+a_partir(secuencia<a> P)→ a  
+ 
+otras operaciones
+apilar(Pila<a> P, a)→ None {post:}
+desapilar(Pila<a> P, a)→ None {pre: la pila tiene al menos un elemento}
+
+Axiomas
+tamaño(Pila<a> P){'devuelve un entero con la cantidad de elementos en la pila P'}
+es_vacia(Pila<a> P){'true -si la pila P esta vacia, false -si la pila P no esta vacia'}
+tope(Pila<a> P){'devuelve el elemento que se encuentra en el tope de la pila P'}
+nueva_pila(){'crea una pila vacia')
+a_partir(secuencia<a> P){'crea una pila 'P' apartir de los elementos de la secuencia'}
+apilar(Pila<a> P, a elemen){'agrega un elemento 'elemen' al tope de la pila 'P''}
+desapilar(Pila<a> P){'elimina el elemento que se encuentra al tope de la pila 'P''}
+
+Exporta
+Pila<a> ; tamaño ; es_vacia ; tope ; nueva_pila ; 
+a_partir() ; apilar ; desapilar
